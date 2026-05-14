@@ -79,7 +79,7 @@ const ResTopNavbar = ({ data }: { data: NavMenu }) => {
                                 className="border-b border-black/5 last:border-none"
                               >
                                 <AccordionTrigger
-                                  classNam  e={cn(
+                                  className={cn(
                                     "py-4 text-sm font-bold uppercase tracking-[0.2em] text-black/40 hover:no-underline hover:text-black transition-colors"
                                   )}
                                 >
