@@ -11,7 +11,8 @@ type Props = {
 };
 
 const Providers = ({ children }: Props) => {
-  const { store, persistor } = makeStore();
+  const [storeAndPersistor] = React.useState(() => makeStore());
+  const { store, persistor } = storeAndPersistor;
 
   return (
     <Provider store={store}>
