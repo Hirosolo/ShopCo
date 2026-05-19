@@ -28,9 +28,9 @@ const AnimatedCounter = ({
     if (!element) return;
     if (!inView) return;
 
-    // Reserve final width to avoid layout shifts
+    // Reserve final width to avoid layout shifts and lock width to avoid reflows
     const finalText = Number(to).toLocaleString();
-    element.style.minWidth = `${finalText.length}ch`;
+    element.style.width = `${finalText.length}ch`;
     element.style.display = "inline-block";
     element.style.textAlign = "right";
 
@@ -43,18 +43,24 @@ const AnimatedCounter = ({
       return;
     }
 
+    let raf = 0;
     const controls = animate(from, to, {
       duration: 6,
       ease: "easeOut",
       ...animationOptions,
       onUpdate(value) {
-        element.textContent = Number(value.toFixed(0)).toLocaleString();
+        // Batch DOM update to the next animation frame to avoid forced synchronous layout
+        if (raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(() => {
+          element.textContent = Number(value.toFixed(0)).toLocaleString();
+        });
       },
     });
 
     // Cancel on unmount
     return () => {
       controls.stop();
+      if (raf) cancelAnimationFrame(raf);
     };
   }, [ref, inView, from, to]);
 

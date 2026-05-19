@@ -33,8 +33,7 @@ export default function RootLayout({
           rel="stylesheet"
           href="/_next/static/css/29847d2730b36d6c.css"
           media="print"
-          // @ts-ignore
-          onLoad="this.media='all'"
+          onLoad={(e) => ((e.currentTarget as HTMLLinkElement).media = "all")}
         />
         <link
           rel="preload"
@@ -45,8 +44,7 @@ export default function RootLayout({
           rel="stylesheet"
           href="/_next/static/css/3b60e469efec1c46.css"
           media="print"
-          // @ts-ignore
-          onLoad="this.media='all'"
+          onLoad={(e) => ((e.currentTarget as HTMLLinkElement).media = "all")}
         />
       </head>
       <body className={satoshi.className}>
