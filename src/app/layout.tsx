@@ -23,6 +23,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preload" href="/_next/static/css/29847d2730b36d6c.css" as="style" onLoad="this.rel='stylesheet'" />
+        <link rel="preload" href="/_next/static/css/3b60e469efec1c46.css" as="style" onLoad="this.rel='stylesheet'" />
+        <noscript>
+          <link rel="stylesheet" href="/_next/static/css/29847d2730b36d6c.css" />
+          <link rel="stylesheet" href="/_next/static/css/3b60e469efec1c46.css" />
+        </noscript>
+      </head>
       <body className={satoshi.className}>
         <HolyLoaderSimple color="#868686" />
         <TopBanner />
