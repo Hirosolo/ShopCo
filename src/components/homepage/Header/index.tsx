@@ -94,8 +94,16 @@ const Header = () => {
           whileInView={{ y: "0", opacity: 1, rotate: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 2.3, duration: 0.8 }}
-          className="relative md:px-4 min-h-[448px] md:min-h-[428px] bg-cover bg-top xl:bg-[center_top_-1.6rem] bg-no-repeat bg-[url('/images/banner.webp')] md:bg-[url('/images/banner.webp')]"
+          className="relative md:px-4 min-h-[448px] md:min-h-[428px] overflow-hidden"
         >
+          <Image
+            priority
+            src="/images/banner.webp"
+            alt="banner"
+            fill
+            className="absolute inset-0 -z-10 object-cover"
+          />
+
           <Image
             priority
             src="/icons/big-star.svg"

@@ -4,13 +4,11 @@ const ProductListSec = dynamic(
   () => import("@/components/common/ProductListSec"),
   {
     loading: () => <div className="h-48 bg-gray-100 animate-pulse rounded" />,
-    ssr: false,
   }
 );
 
 const Header = dynamic(() => import("@/components/homepage/Header"), {
   loading: () => <div className="h-24 bg-gray-100 animate-pulse rounded" />,
-  ssr: false,
 });
 import { Product } from "@/types/product.types";
 import { Review } from "@/types/review.types";
