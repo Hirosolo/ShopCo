@@ -1,10 +1,30 @@
+import dynamic from "next/dynamic";
 import ProductListSec from "@/components/common/ProductListSec";
-import Brands from "@/components/homepage/Brands";
-import DressStyle from "@/components/homepage/DressStyle";
 import Header from "@/components/homepage/Header";
-import Reviews from "@/components/homepage/Reviews";
 import { Product } from "@/types/product.types";
 import { Review } from "@/types/review.types";
+
+// Lazy load heavy components to reduce initial bundle
+const Brands = dynamic(() => import("@/components/homepage/Brands"), {
+  loading: () => <div className="h-24 bg-gray-100 animate-pulse rounded" />,
+});
+
+const DressStyle = dynamic(
+  () => import("@/components/homepage/DressStyle"),
+  {
+    loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded" />,
+  }
+);
+
+const Reviews = dynamic(
+  () => import("@/components/homepage/Reviews"),
+  {
+    loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded" />,
+  }
+);
+
+// Enable SSG with ISR - revalidate every 60 minutes
+export const revalidate = 3600;
 
 export const newArrivalsData: Product[] = [
   {

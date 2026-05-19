@@ -2,10 +2,12 @@
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import React, { useState } from "react";
-import ProductDetailsContent from "./ProductDetailsContent";
-import ReviewsContent from "./ReviewsContent";
-import FaqContent from "./FaqContent";
+import React, { useState, lazy, Suspense } from "react";
+
+// Lazy load tab content to reduce initial bundle
+const ProductDetailsContent = lazy(() => import("./ProductDetailsContent"));
+const ReviewsContent = lazy(() => import("./ReviewsContent"));
+const FaqContent = lazy(() => import("./FaqContent"));
 
 type TabBtn = {
   id: number;
@@ -26,6 +28,12 @@ const tabBtnData: TabBtn[] = [
     label: "FAQs",
   },
 ];
+
+const TabsLoader = () => (
+  <div className="h-64 flex items-center justify-center text-gray-400">
+    Loading content...
+  </div>
+);
 
 const Tabs = () => {
   const [active, setActive] = useState<number>(1);
@@ -51,9 +59,11 @@ const Tabs = () => {
         ))}
       </div>
       <div className="mb-12 sm:mb-16">
-        {active === 1 && <ProductDetailsContent />}
-        {active === 2 && <ReviewsContent />}
-        {active === 3 && <FaqContent />}
+        <Suspense fallback={<TabsLoader />}>
+          {active === 1 && <ProductDetailsContent />}
+          {active === 2 && <ReviewsContent />}
+          {active === 3 && <FaqContent />}
+        </Suspense>
       </div>
     </div>
   );

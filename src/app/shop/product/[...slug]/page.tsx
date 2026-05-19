@@ -10,6 +10,9 @@ import Tabs from "@/components/product-page/Tabs";
 import { Product } from "@/types/product.types";
 import { notFound } from "next/navigation";
 
+// Enable ISR - revalidate every 1 hour
+export const revalidate = 3600;
+
 const data: Product[] = [
   ...newArrivalsData,
   ...topSellingData,

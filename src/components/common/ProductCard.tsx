@@ -21,7 +21,8 @@ const ProductCard = ({ data }: ProductCardProps) => {
           height={298}
           className="rounded-md w-full h-full object-contain hover:scale-110 transition-all duration-500"
           alt={data.title}
-          priority
+          loading="lazy"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>
       <div className="flex items-center space-x-2">
