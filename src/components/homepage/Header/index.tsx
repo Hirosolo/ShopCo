@@ -101,6 +101,7 @@ const Header = () => {
             src="/images/banner.webp"
             alt="banner"
             fill
+            sizes="(max-width: 768px) 100vw, 412px"
             className="absolute inset-0 -z-10 object-cover"
           />
 

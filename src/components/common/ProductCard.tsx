@@ -14,15 +14,15 @@ const ProductCard = ({ data }: ProductCardProps) => {
       href={`/shop/product/${data.id}/${data.title.split(" ").join("-")}`}
       className="flex flex-col items-start aspect-auto"
     >
-      <div className="bg-[#F0EEED] rounded-[13px] lg:rounded-[20px] w-full lg:max-w-[295px] aspect-square mb-2.5 xl:mb-4 overflow-hidden">
+        <div className="bg-[#F0EEED] rounded-[13px] lg:rounded-[20px] w-full lg:max-w-[295px] aspect-square mb-2.5 xl:mb-4 overflow-hidden">
         <Image
           src={data.srcUrl}
-          width={295}
-          height={298}
+          width={198}
+          height={198}
           className="rounded-md w-full h-full object-contain hover:scale-110 transition-all duration-500"
           alt={data.title}
           loading="lazy"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 198px"
         />
       </div>
       <div className="flex items-center space-x-2">
