@@ -299,7 +299,6 @@ const TopNavbar = () => {
         <InputGroup className="hidden md:flex bg-[#F0F0F0] mr-3 lg:mr-10">
           <InputGroup.Text>
             <Image
-              priority
               src="/icons/search.svg"
               height={20}
               width={20}
@@ -317,7 +316,6 @@ const TopNavbar = () => {
         <div className="flex items-center">
           <Link href="/search" className="block md:hidden mr-[14px] p-1">
             <Image
-              priority
               src="/icons/search-black.svg"
               height={100}
               width={100}

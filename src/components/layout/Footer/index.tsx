@@ -129,7 +129,6 @@ const Footer = () => {
                   ])}
                 >
                   <Image
-                    priority
                     src={badge.srcUrl}
                     width={33}
                     height={15}

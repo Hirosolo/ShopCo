@@ -28,22 +28,26 @@ export default function RootLayout({
           rel="preload"
           href="/_next/static/css/29847d2730b36d6c.css"
           as="style"
-          onLoad={(e) => {
-            ;(e.currentTarget as HTMLLinkElement).rel = "stylesheet";
-          }}
+        />
+        <link
+          rel="stylesheet"
+          href="/_next/static/css/29847d2730b36d6c.css"
+          media="print"
+          // @ts-ignore
+          onLoad="this.media='all'"
         />
         <link
           rel="preload"
           href="/_next/static/css/3b60e469efec1c46.css"
           as="style"
-          onLoad={(e) => {
-            ;(e.currentTarget as HTMLLinkElement).rel = "stylesheet";
-          }}
         />
-        <noscript>
-          <link rel="stylesheet" href="/_next/static/css/29847d2730b36d6c.css" />
-          <link rel="stylesheet" href="/_next/static/css/3b60e469efec1c46.css" />
-        </noscript>
+        <link
+          rel="stylesheet"
+          href="/_next/static/css/3b60e469efec1c46.css"
+          media="print"
+          // @ts-ignore
+          onLoad="this.media='all'"
+        />
       </head>
       <body className={satoshi.className}>
         <HolyLoaderSimple color="#868686" />

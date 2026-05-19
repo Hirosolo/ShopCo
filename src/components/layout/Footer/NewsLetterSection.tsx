@@ -21,7 +21,6 @@ const NewsLetterSection = () => {
           <InputGroup className="flex bg-white mb-[14px]">
             <InputGroup.Text>
               <Image
-                priority
                 src="/icons/envelope.svg"
                 height={20}
                 width={20}

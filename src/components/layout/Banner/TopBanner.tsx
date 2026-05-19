@@ -21,7 +21,6 @@ const TopBanner = () => {
           aria-label="close banner"
         >
           <Image
-            priority
             src="/icons/times.svg"
             height={13}
             width={13}

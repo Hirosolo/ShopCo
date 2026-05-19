@@ -33,7 +33,6 @@ const ProductCard = ({ data }: ProductCardProps) => {
           height={124}
           className="rounded-md w-full h-full object-cover hover:scale-110 transition-all duration-500"
           alt={data.name}
-          priority
         />
       </Link>
       <div className="flex w-full self-stretch flex-col">
