@@ -28,6 +28,12 @@ const AnimatedCounter = ({
     if (!element) return;
     if (!inView) return;
 
+    // Reserve final width to avoid layout shifts
+    const finalText = Number(to).toLocaleString();
+    element.style.minWidth = `${finalText.length}ch`;
+    element.style.display = "inline-block";
+    element.style.textAlign = "right";
+
     // Set initial value
     element.textContent = String(from);
 
